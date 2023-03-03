@@ -2,6 +2,13 @@ const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const client = new Client({
     authStrategy: new LocalAuth(),
+    puppeteer: { headless: true,args: 
+        [
+            "--hide-scrollbars",
+            "--disable-web-security",
+            "--no-sandbox",
+            "--disable-setuid-sandbox",] 
+    }
 });
 export class WhatsappWeb {
     static Inicia() {
