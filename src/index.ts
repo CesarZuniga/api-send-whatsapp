@@ -2,10 +2,16 @@ import express, { Application } from "express";
 import morgan from "morgan";
 import Router from "./routes";
 import swaggerUi from "swagger-ui-express";
+import { WhatsappWeb } from "./whatsapp-web";
+
 
 const PORT = process.env.PORT || 8000;
 const bodyParser = require('body-parser');
 const app: Application = express();
+
+// inicia el cliente whatsapp web js
+WhatsappWeb.Inicia();
+
 
 app.use(express.json());
 app.use(morgan("tiny"));
