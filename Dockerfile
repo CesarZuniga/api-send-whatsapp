@@ -23,6 +23,6 @@ COPY . .
 
 RUN rm -rf ".wwebjs_auth/session"
 
-EXPOSE 3000
+EXPOSE 8000
 
 CMD [ "npm", "start" ]
